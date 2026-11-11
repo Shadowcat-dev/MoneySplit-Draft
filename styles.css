@@ -1,0 +1,263 @@
+/* Money Split - Dark Gray & Marbled Gold Palette */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --bg-dark: #0f0f11;
+  --bg-card: rgba(22, 22, 26, 0.85);
+  --gold-primary: #D4AF37;
+  --gold-light: #F3E5AB;
+  --gold-dark: #AA771C;
+  --text-light: #E0E0E0;
+  --text-muted: #9E9E9E;
+  --border-gold: rgba(212, 175, 55, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--bg-dark);
+  background-image: 
+    radial-gradient(circle at 50% 30%, rgba(35, 35, 42, 0.8) 0%, rgba(15, 15, 17, 1) 100%),
+    radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.05) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(212, 175, 55, 0.05) 0%, transparent 40%);
+  color: var(--text-light);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Background canvas animation */
+.bg-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Central Card styling with Marbled Gold Border */
+.card {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 440px;
+  padding: 40px 35px;
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  border-radius: 20px;
+  border: 1px solid var(--border-gold);
+  box-shadow: 
+    0 15px 35px rgba(0, 0, 0, 0.6),
+    0 0 25px rgba(212, 175, 55, 0.12),
+    inset 0 0 15px rgba(212, 175, 55, 0.05);
+  text-align: center;
+  animation: fadeIn 0.8s ease-out;
+}
+
+.form-card {
+  text-align: left;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Back Link */
+.back-link {
+  display: inline-block;
+  color: var(--gold-primary);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.back-link:hover {
+  color: var(--gold-light);
+  transform: translateX(-4px);
+}
+
+/* Logo & Mascot */
+.logo-container {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.header-compact {
+  margin-bottom: 25px;
+}
+
+.mascot-wrapper {
+  width: 140px;
+  height: 150px;
+  margin: 0 auto 10px auto;
+  filter: drop-shadow(0 0 12px rgba(212, 175, 55, 0.3));
+  transition: transform 0.3s ease;
+}
+
+.mascot-wrapper:hover {
+  transform: scale(1.04);
+}
+
+.pig-mascot {
+  width: 100%;
+  height: 100%;
+}
+
+.brand-title {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: 3px;
+  background: linear-gradient(135deg, #FFF 0%, #FFE57F 30%, #D4AF37 70%, #996614 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  margin-bottom: 6px;
+}
+
+.tagline {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Buttons */
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  padding: 14px 20px;
+  border-radius: 30px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #E6CA65 0%, #D4AF37 50%, #996614 100%);
+  color: #0F0F11;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #FFF0AA 0%, #E6CA65 50%, #B8860B 100%);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--gold-primary);
+  border: 1.5px solid var(--gold-primary);
+  box-shadow: inset 0 0 10px rgba(212, 175, 55, 0.1);
+}
+
+.btn-secondary:hover {
+  background: rgba(212, 175, 55, 0.1);
+  color: var(--gold-light);
+  border-color: var(--gold-light);
+  transform: translateY(-2px);
+}
+
+/* Forms */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--gold-primary);
+  margin-bottom: 8px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 13px 16px;
+  border-radius: 10px;
+  background: rgba(10, 10, 12, 0.7);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  color: #FFF;
+  font-size: 0.95rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+  border-color: var(--gold-primary);
+  box-shadow: 0 0 12px rgba(212, 175, 55, 0.3);
+  background: rgba(15, 15, 18, 0.9);
+}
+
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.82rem;
+  margin-bottom: 25px;
+  color: var(--text-muted);
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.forgot-pwd {
+  color: var(--gold-primary);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.forgot-pwd:hover {
+  color: var(--gold-light);
+  text-decoration: underline;
+}
+
+.card-footer {
+  margin-top: 25px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.card-footer a {
+  color: var(--gold-primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.card-footer a:hover {
+  color: var(--gold-light);
+  text-decoration: underline;
+}
